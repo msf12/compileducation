@@ -9,15 +9,18 @@
 unsigned int parseFlags(int argc, char const *argv[]){
 	unsigned int fID = 0; //fID stands for flag ID, default state 0000 0000
 	for (int k = 1; k<argc; ++k){ //cycles through possible flags
-		char *fTemp = argv[k]; //the temporary flag read from file
-		switch (fTemp){
-			case ("-o") : //case for an instance of the -o flag
-				fID = fID|OFLAG; // sets to xxxx xxx1
-				break;
-			default : //if there is no valid flag
-				fID = fID|INVALIDFLAG; //sets to 1xxx xxxx
-				break;
+		if (*argv[k]=='-'){
+			char fTemp = *(argv[k]+1);
+			switch (fTemp){
+				case ("-o") : //case for an instance of the -o flag
+					fID = fID|OFLAG; // sets to xxxx xxx1
+					break;
+				default : //if there is no valid flag
+					fID = fID|INVALIDFLAG; //sets to 1xxx xxxx
+					break;
+			}
 		}
-
+		else
+			fID = fID|INVALIDFLAG;
 	}
 }
