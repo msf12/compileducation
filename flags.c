@@ -23,4 +23,5 @@ unsigned int parseFlags(int argc, char const *argv[]){
 		else
 			fID = fID|INVALIDFLAG;
 	}
+	return fID;
 }
