@@ -12,7 +12,7 @@ unsigned int parseFlags(int argc, char const *argv[]){
 		if (*argv[k]=='-'){
 			char fTemp = *(argv[k]+1);
 			switch (fTemp){
-				case ("-o") : //case for an instance of the -o flag
+				case ('o') : //case for an instance of the -o flag
 					fID = fID|OFLAG; // sets to xxxx xxx1
 					break;
 				default : //if there is no valid flag
