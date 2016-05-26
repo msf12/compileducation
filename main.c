@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 	if (source == NULL)
 		return -1; //temporary code for File not Found Error.
 	unsigned int flags = parseFlags(argc,argv);
-
+	printf("%i", &flags);
 	return 0;
 
 }
