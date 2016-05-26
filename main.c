@@ -12,11 +12,15 @@ int main(int argc, char const *argv[])
 	if (argc == 0)
 		return 1; //temporary code for No Arguments Error
 	FILE *source; //source is the source code of the input file
+	FILE *out;
 	source = fopen(argv[0], "r");
 	if (source == NULL)
 		return -1; //temporary code for File not Found Error.
 	unsigned int flags = parseFlags(argc,argv);
-	printf("%u", flags);
+	if(1==(OFLAG&flags))
+		out = fopen(argv[argc-1], "w");
+	else
+		out = fopen("a.out", "w");
 	return 0;
 
 }
