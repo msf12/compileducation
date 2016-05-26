@@ -1,9 +1,9 @@
 CC=gcc
 CFLAGS=-std=c11
 OUTPUT=test.out
-SOURCES=main.c flags.c
+SOURCES=flags.c tokenizer.c main.c
 OBJECTS=$(SOURCES:.c=.o)
-HEADERS=flags.h
+HEADERS=flags.h tokenizer.h
 
 all: $(OUTPUT)
 

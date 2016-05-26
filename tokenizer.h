@@ -6,6 +6,19 @@
 
 #define BUFFER_SIZE 256
 
+typedef struct NumNode
+{
+	struct NumNode *next;
+	double *value;
+} NumberTable;
+
+typedef struct SymNode
+{
+	struct SymNode *next;
+	double *value;
+	char *name;
+} SymbolTable;
+
 char Buffer1[BUFFER_SIZE],
      Buffer2[BUFFER_SIZE];
 
@@ -17,6 +30,6 @@ char Buffer1[BUFFER_SIZE],
 
 int populateBuffer(const unsigned char buffer, FILE *source);
 
-int tokenize(FILE *source);
+int tokenize(FILE *source, FILE *out);
 
 #endif

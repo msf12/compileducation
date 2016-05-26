@@ -19,9 +19,14 @@ int main(int argc, char const *argv[])
 		return -1; //temporary code for File not Found Error.
 	unsigned int flags = parseFlags(argc,argv);
 	if(1==(OFLAG&flags))
+	{
 		out = fopen(argv[argc-1], "w");
+	}
 	else
+	{
 		out = fopen("a.out", "w");
+	}
+	tokenize(source,out);
 	return 0;
 
 }
