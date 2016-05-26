@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "flags.h"
+#include "tokenizer.h"
 
 int main(int argc, char const *argv[])
 {
