@@ -1,0 +1,13 @@
+valid operators:
++   -   *  /  %   <  >  ==  !   =
+ADD SUB MT DV MDV LT GT EQ  NOT ASSIGN
+
+non-assignment expressions are printed with their results
+
+stmnts -> stmnt stmnts | e
+stmnt -> term = comp ; | comp ;
+comp -> term < addsub | term > addsub | term == addsub | addsub
+addsub -> term + addsub | term - addsub | multdiv
+multdiv -> term * multdiv | term / multdiv | term % multdiv | unop
+unop -> -term | !term | term
+term -> (addsub) | ID
